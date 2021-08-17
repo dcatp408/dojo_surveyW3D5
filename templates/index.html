@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css')}}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <title>Dojo Survey </title>
+</head>
+
+<body>
+    <form action="/result" method="post">
+        <div class="container">
+            <h1>Dojo Survey</h1>
+            <div class="row">
+                <p>Your Name: </p>
+                <label for="inputName"></label>
+                <input type="text" class="formInput" name="name" id="inputName">
+            </div>
+
+            <div class="row">
+                <p>Dojo Location:</p>
+                <select name="location" class="formInput" id="selectLocation">
+                    <option value="none"></option>
+                    <option>Chicago</option>
+                    <option>Seattle</option>
+                    <option>Miami</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <p>Favorite Language:</p>
+                <select name="language" class="formInput" id="selectLanguage">
+                    <option value="none"></option>
+                    <option>Python</option>
+                    <option>CSS</option>
+                    <option>JavaScript</option>
+                </select>
+            </div>
+            <div class="row">
+                <p>Comments: </p>
+                <textarea rows="3" name="comment"></textarea>
+
+            </div>
+
+            <input type="submit" value="submit" class="btn">
+        </div>
+    </form>
+</body>
+
+</html>
